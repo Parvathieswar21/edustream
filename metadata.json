@@ -1,0 +1,5 @@
+{
+  "name": "EduStream - School Management System",
+  "description": "A comprehensive school management system with roles for Admins, Teachers, and Students. Features include attendance tracking, grade management, and class scheduling.",
+  "requestFramePermissions": []
+}

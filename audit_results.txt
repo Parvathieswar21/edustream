@@ -1,0 +1,74 @@
+--- Auditing ./school.db ---
+--- Users ---
+[
+  {
+    "id": 2,
+    "name": "Teacher User",
+    "username": "TCH001",
+    "email": "teacher@example.com",
+    "role": "teacher"
+  },
+  {
+    "id": 3,
+    "name": "Student User",
+    "username": "STU001",
+    "email": "student@example.com",
+    "role": "student"
+  },
+  {
+    "id": 4,
+    "name": "Eswar",
+    "username": null,
+    "email": "eeswarnaidu572@gmail.com",
+    "role": "student"
+  },
+  {
+    "id": 5,
+    "name": "John Doe",
+    "username": "STU002",
+    "email": "john.doe@example.com",
+    "role": "student"
+  },
+  {
+    "id": 6,
+    "name": "Jane Smith",
+    "username": null,
+    "email": "jane.smith@example.com",
+    "role": "student"
+  },
+  {
+    "id": 7,
+    "name": "Admin User",
+    "username": "ADM001",
+    "email": "admin@example.com",
+    "role": "admin"
+  },
+  {
+    "id": 8,
+    "name": "Teacher User",
+    "username": "teacher1",
+    "email": "teacher1@example.com",
+    "role": "teacher"
+  }
+]
+
+--- Classes ---
+[
+  {
+    "id": 1,
+    "name": "Grade 10",
+    "section": "A"
+  }
+]
+
+--- Teacher Assignments ---
+[]
+
+--- Student Assignments ---
+[
+  {
+    "id": 1,
+    "student": "John Doe",
+    "class": "Grade 10"
+  }
+]
