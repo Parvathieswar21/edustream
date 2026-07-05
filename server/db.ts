@@ -1,15 +1,47 @@
-import Database from 'better-sqlite3';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
+import { createRequire } from 'module';
 
+const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Ensure db directory or file exists if needed
 const dbPath = path.join(__dirname, '..', 'school.db');
 
-export const db = new Database(dbPath);
+export let db: any;
+let dbError: any = null;
+
+try {
+  const Database = require('better-sqlite3');
+  db = new Database(dbPath);
+} catch (e: any) {
+  console.error("Failed to initialize SQLite database:", e);
+  dbError = e;
+  db = new Proxy({}, {
+    get(target, prop) {
+      if (prop === 'prepare') {
+        return (sql: string) => {
+          return {
+            get: (...args: any[]) => { throw new Error(`Database error on prepare.get. Init error: ${dbError?.message}\n${dbError?.stack}`); },
+            all: (...args: any[]) => { throw new Error(`Database error on prepare.all. Init error: ${dbError?.message}\n${dbError?.stack}`); },
+            run: (...args: any[]) => { throw new Error(`Database error on prepare.run. Init error: ${dbError?.message}\n${dbError?.stack}`); },
+            exec: (...args: any[]) => { throw new Error(`Database error on prepare.exec. Init error: ${dbError?.message}\n${dbError?.stack}`); }
+          };
+        };
+      }
+      if (prop === 'exec') {
+        return (...args: any[]) => {
+          throw new Error(`Database error on exec. Init error: ${dbError?.message}\n${dbError?.stack}`);
+        };
+      }
+      return (...args: any[]) => {
+        throw new Error(`Database not initialized due to: ${dbError?.message}\n${dbError?.stack}`);
+      };
+    }
+  });
+}
 
 export function initDb() {
   console.log(`Connected to local SQLite database at ${dbPath}`);
