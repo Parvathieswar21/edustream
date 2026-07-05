@@ -1,7 +1,7 @@
 import express from 'express';
 import multer from 'multer';
-import db from '../db.ts';
-import { authenticate, authorize, AuthRequest } from '../middleware/auth.ts';
+import db from '../db';
+import { authenticate, authorize, AuthRequest } from '../middleware/auth';
 
 const router = express.Router();
 

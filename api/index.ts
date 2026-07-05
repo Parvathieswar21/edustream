@@ -1,8 +1,10 @@
 import express from 'express';
-import authRoutes from '../server/routes/auth.ts';
-import adminRoutes from '../server/routes/admin.ts';
-import teacherRoutes from '../server/routes/teacher.ts';
-import studentRoutes from '../server/routes/student.ts';
+import authRoutes from '../server/routes/auth';
+import adminRoutes from '../server/routes/admin';
+import teacherRoutes from '../server/routes/teacher';
+import studentRoutes from '../server/routes/student';
+import aiRoutes from '../server/routes/ai';
+import assignmentRoutes from '../server/routes/assignments';
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/teacher', teacherRoutes);
 app.use('/api/student', studentRoutes);
+app.use('/api/ai', aiRoutes);
+app.use('/api/assignments', assignmentRoutes);
 
 // Global Error Handler
 app.use((err: any, req: any, res: any, next: any) => {

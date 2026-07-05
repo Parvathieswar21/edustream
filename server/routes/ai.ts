@@ -1,5 +1,5 @@
 import express from 'express';
-import { authenticate } from '../middleware/auth.ts';
+import { authenticate } from '../middleware/auth';
 
 const router = express.Router();
 

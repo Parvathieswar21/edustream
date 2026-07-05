@@ -3,12 +3,12 @@ import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import authRoutes from './server/routes/auth.ts';
-import adminRoutes from './server/routes/admin.ts';
-import teacherRoutes from './server/routes/teacher.ts';
-import studentRoutes from './server/routes/student.ts';
-import aiRoutes from './server/routes/ai.ts';
-import assignmentRoutes from './server/routes/assignments.ts';
+import authRoutes from './server/routes/auth';
+import adminRoutes from './server/routes/admin';
+import teacherRoutes from './server/routes/teacher';
+import studentRoutes from './server/routes/student';
+import aiRoutes from './server/routes/ai';
+import assignmentRoutes from './server/routes/assignments';
 
 dotenv.config();
 

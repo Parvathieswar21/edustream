@@ -8,7 +8,7 @@ async function testProfile() {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username: 'TCH001', password: 'password123', role: 'teacher' })
   });
-  let data = await res.json();
+  let data: any = await res.json();
   const token = data.token;
   if (!token) throw new Error('Initial login failed! Response: ' + JSON.stringify(data));
   console.log('✅ Logged in successfully. Token received.');

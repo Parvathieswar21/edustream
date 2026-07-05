@@ -1,7 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
-import db from '../db.ts';
-import { authenticate, authorize } from '../middleware/auth.ts';
+import db from '../db';
+import { authenticate, authorize } from '../middleware/auth';
 
 const router = express.Router();
 

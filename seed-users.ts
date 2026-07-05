@@ -11,7 +11,8 @@ const db = new Database(path.join(__dirname, 'school.db'));
 async function seedData() {
     const users = [
         { name: 'Teacher User', email: 'teacher@example.com', username: 'TCH001', password: 'password123', role: 'teacher' },
-        { name: 'Student User', email: 'student@example.com', username: 'STU001', password: 'password123', role: 'student' }
+        { name: 'Student User', email: 'student@example.com', username: 'STU001', password: 'password123', role: 'student' },
+        { name: 'Parent User', email: 'parent@example.com', username: 'PAR001', password: 'password123', role: 'parent' }
     ];
 
     for (const user of users) {

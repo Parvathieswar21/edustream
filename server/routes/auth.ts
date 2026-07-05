@@ -1,7 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import db from '../db.ts';
+import db from '../db';
 
 const router = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET || 'super-secret-key';
@@ -180,7 +180,7 @@ router.post('/reset-password', async (req, res) => {
   }
 });
 
-import { authenticate, AuthRequest } from '../middleware/auth.ts';
+import { authenticate, AuthRequest } from '../middleware/auth';
 
 // ========== AUTHENTICATED SECURITY ROUTES ==========
 

@@ -70,7 +70,7 @@ export default function LandingPage() {
               <span>Next-Gen Education OS</span>
             </div>
             <h1 className="text-7xl lg:text-8xl font-black text-slate-900 leading-[0.9] tracking-tighter">
-              The Future of <span className="text-indigo-600">Learning</span> Management.
+              parvathieswar
             </h1>
             <p className="text-xl text-slate-500 leading-relaxed max-w-lg font-medium">
               EduStream is the operating system for modern schools. Empowering teachers, engaging students, and simplifying administration with a single, unified platform.
